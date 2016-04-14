@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
+
 group :development, :test do
   gem 'byebug'
 end

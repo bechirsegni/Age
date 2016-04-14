@@ -12,5 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require date
+//= require bootstrap.min
+//= require jquery.mCustomScrollbar.concat.min.js
+//= require owl.carousel.min.js
+//= require jquery.counterup.min.js
+//= require waypoints.min.js
+//= require jquery.flexslider-min.js
+//= require jquery.magnific-popup.min
+//= require instafeed.min.js
+//= require imagesloaded.pkgd.min.js
+//= require isotope.min.js
+//= require jquery.infinitescroll.min.js
+//= require theme.js
+//= require infinite1
 //= require turbolinks
-//= require_tree .

@@ -10,6 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require bootstrap.min
+ *= require owl.carousel.css
+ *= require font-awesome
+ *= require flexslider
+ *= require jquery.mCustomScrollbar.css
+ *= require magnific-popup
+ *= require style
+ *= require responsive
  *= require_self
  */
