@@ -11,9 +11,12 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
+gem 'devise', github: 'plataformatec/devise'
 
 group :development, :test do
   gem 'byebug'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'bullet', '~> 5.0'
 end
 
 group :development do
