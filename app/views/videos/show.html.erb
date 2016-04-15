@@ -1,0 +1,48 @@
+<section class="row">
+  <div class="embed-responsive embed-responsive-4by3" style="padding-bottom: 35%;">
+    <iframe class="embed-responsive-item" src="<%=@video.url%>"></iframe>
+  </div>
+</section>
+<section class="row">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-8 single-blog sticky content_col">
+        <div class="row m0 inner">
+          <div class="post_inner row m0">
+            <h3 class="post_title"><%=@video.title%></h3>
+            <h5 class="bywho">by <%= @video.user.email%> on <%=@video.created_at.strftime("%A, %b %d")%></h5>
+            <div class="post_content row m0 " >
+              <p class="first"><%=h @video.description.html_safe%></p>
+              <div class="tag_row" style="margin-left: 11%;">
+                <a href="#" class="tag">business</a>
+                <a href="#" class="tag">technology</a>
+                <a href="#" class="tag">photography</a>
+                <a href="#" class="tag">electronics</a>
+                <a href="#" class="tag">entertainment</a>
+                <a href="#" class="tag">fashion</a>
+                <a href="#" class="tag">education</a>
+                <a href="#" class="tag">places</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-sm-12 related_post_row">
+          <div class="title_row row">
+            <h3 class="fleft">Recommended</h3>
+            <div class="fright" id="related_post_dots"></div>
+          </div>
+          <div class="related_posts row m0 center">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+

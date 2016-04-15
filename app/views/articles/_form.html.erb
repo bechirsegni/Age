@@ -12,6 +12,7 @@
       <div class="col-sm-4">
         <div class="input-group">
           <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Category" %>
+          <%= f.select :article_type, article_types.each{ |i| i.to_s }, :prompt => 'Select One' %>
         </div>
       </div>
       <div class="col-sm-4">
@@ -22,9 +23,10 @@
       </div>
     <div class="col-sm-12">
       <div class="input-group textarea">
-        <%=f.text_area :description, id:'new', class:'form-conrol' %>
+        <%=f.cktext_area :description%>
       </div>
     </div>
+
     <div class="col-sm-2">
       <%=f.submit class:'btn btn-primary'%>
     </div>

@@ -1,54 +1,17 @@
 <section class="row video_posts" id="popular_videos">
   <div class="container-fluid">
     <div class="row">
+      <%videos.each do |v|%>
+          <%=link_to v do %>
       <div class="col-sm-3 video-post">
-        <h3 class="post_title"><i class="fa fa-youtube-play"></i>50 percent off</h3>
+        <h3 class="post_title"><i class="fa fa-youtube-play"></i><%=v.title%></h3>
         <!-- 4:3 aspect ratio -->
         <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9tBGOE5gdzA"></iframe>
+          <%=image_tag v.thumb.url(:medium), class: 'embed-responsive-item'%>
         </div>
-        <blockquote>
-          <footer>
-            Curabitur blandit mollis lacus. Nam adipiscing eleifend
-          </footer>
-        </blockquote>
       </div>
-      <div class="col-sm-3 video-post">
-        <h3 class="post_title"><i class="fa fa-youtube-play"></i>Productive morning</h3>
-        <!-- 4:3 aspect ratio -->
-        <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Pg9LVHFKXcE"></iframe>
-        </div>
-        <blockquote>
-          <footer>
-            Cum sociis natoque penatibus et magnis monte.
-          </footer>
-        </blockquote>
-      </div>
-      <div class="col-sm-3 video-post">
-        <h3 class="post_title"><i class="fa fa-youtube-play"></i>city nights</h3>
-        <!-- 4:3 aspect ratio -->
-        <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NnJe6K1oCxc"></iframe>
-        </div>
-        <blockquote>
-          <footer>
-            Maecenas nec odio et ante tincidunt tempus.
-          </footer>
-        </blockquote>
-      </div>
-      <div class="col-sm-3 video-post">
-        <h3 class="post_title"><i class="fa fa-youtube-play"></i>beautiful glass lamp</h3>
-        <!-- 4:3 aspect ratio -->
-        <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kgPghSJhkzU"></iframe>
-        </div>
-        <blockquote>
-          <footer>
-            Fusce vulputate eleifend purus scelerisque.
-          </footer>
-        </blockquote>
-      </div>
+              <%end%>
+      <%end%>
     </div>
   </div>
 </section>
