@@ -1,6 +1,8 @@
 <div class="col-sm-6 post post-3 quote">
   <div class="row m0 inner">
-    <img src="images/posts/2.jpg" alt="" class="img-responsive">
+    <%= link_to article_path(article) do %>
+        <%= image_tag article.image.url(:large) ,class:'img-responsive'%>
+    <%end%>
     <div class="dropdown pull-right social_share_drop">
       <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-ellipsis-v"></i>
@@ -16,24 +18,12 @@
     <div class="row m0 post_contents">
       <div class="row m0 quote_text_row">
         <h2 class="quote_mark">”</h2>
-        <h3 class="post_title">Many men go fishing all of their lives without knowing that it is not fish they are after.</h3>
+        <h3 class="post_title"><%=article.title%></h3>
       </div>
-      <div class="row quote_text_footer">
-        <div class="col-sm-8 quote_author">
-          <div class="media">
-            <div class="media-left media-middle">
-              <a href="#"><img src="images/posts/quote-author.png" alt=""></a>
-            </div>
-            <div class="media-body">
-              <h5><a href="#">Orlando Ricky</a></h5>
-              <p>Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.</p>
-            </div>
-          </div>
-        </div>
         <div class="col-sm-4 quote_cat">
           <h4 class="category sports"><a href="#">sports</a></h4>
           <ul class="post_meta nav nav-pills">
-            <li><a href="#">August 6, 2015</a></li>
+            <li><%=article.created_at.strftime("%A, %b %d")%></li>
             <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
             <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
           </ul>

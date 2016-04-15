@@ -1,7 +1,9 @@
 <div class="col-sm-3 post post-10">
   <div class="row m0 inner">
     <div class="row m0 featured_img">
-      <a href="single-blog.html"><img src="images/posts/8.jpg" alt=""></a>
+      <%= link_to article_path(article) do %>
+          <%= image_tag article.image.url(:large) ,class:'img-responsive'%>
+      <%end%>
     </div>
     <div class="row m0 post_contents">
       <div class="row m0 category money">
@@ -19,9 +21,9 @@
           </ul>
         </div>
       </div>
-      <h3 class="post_title"><a href="#">Blind teen with autism rocks Star-Spangled Banner</a></h3>
+      <h3 class="post_title"><%= link_to article.title , article_path(article)%></h3>
       <ul class="post_meta nav nav-pills">
-        <li><a href="#">August 6, 2015</a></li>
+        <li><%=article.created_at.strftime("%A, %b %d")%></li>
         <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
         <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
       </ul>

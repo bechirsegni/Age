@@ -1,6 +1,6 @@
-<div class="col-sm-6 post post-5 interview">
+<div class="col-sm-6 post interview">
   <div class="row m0 inner">
-    <img src="images/posts/4.jpg" alt="" class="img-responsive">
+    <%= image_tag article.image.url ,class:'img-responsive'%>
     <div class="dropdown pull-right social_share_drop">
       <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-ellipsis-v"></i>
@@ -14,10 +14,10 @@
       </ul>
     </div>
     <div class="row m0 post_contents">
-      <h4 class="category world"><a href="#">world</a></h4>
-      <h3 class="post_title">Interview with Lia Esheley about political issues in U.s.a</h3>
+      <h4 class="category world"><a href="#"><%=article.category.name%></a></h4>
+      <h3 class="post_title"><%=article.title%></h3>
       <ul class="post_meta nav nav-pills">
-        <li><a href="#">August 6, 2015</a></li>
+        <li><a href="#"><%=article.created_at.strftime("%A, %b %d")%></a></li>
         <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
         <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
       </ul>

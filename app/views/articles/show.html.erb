@@ -13,14 +13,7 @@
           <div class="post_content row m0 " >
             <p class="first"><%=h @article.description.html_safe%></p>
             <div class="tag_row" style="margin-left: 11%;">
-              <a href="#" class="tag">business</a>
-              <a href="#" class="tag">technology</a>
-              <a href="#" class="tag">photography</a>
-              <a href="#" class="tag">electronics</a>
-              <a href="#" class="tag">entertainment</a>
-              <a href="#" class="tag">fashion</a>
-              <a href="#" class="tag">education</a>
-              <a href="#" class="tag">places</a>
+              <%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t), class:'tag' }.join(', ') %>
             </div>
           </div>
         </div>

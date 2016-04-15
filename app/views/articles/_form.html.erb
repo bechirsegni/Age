@@ -27,7 +27,14 @@
       </div>
     </div>
 
-    <div class="col-sm-2">
+
+      <div class="field">
+        <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+        <%= f.text_field :tag_list %>
+      </div>
+
+
+      <div class="col-sm-2">
       <%=f.submit class:'btn btn-primary'%>
     </div>
   <%end%>
