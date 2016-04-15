@@ -1,0 +1,52 @@
+<section class="row col-sm-8">
+  <%= image_tag @article.image.url(:large) ,class:'img-responsive', style: 'margin-left: 25%;  margin-top: 2%'%>
+</section>
+<section class="row">
+  <div class="container-fluid">
+    <div class="row">
+
+<div class="col-sm-8 single-blog sticky content_col">
+      <div class="row m0 inner">
+        <div class="post_inner row m0">
+          <h3 class="post_title"><%=@article.title%></h3>
+          <h5 class="bywho">by <%= @article.user.email%> on <%=@article.created_at.strftime("%A, %b %d")%></h5>
+          <div class="post_content row m0 " >
+            <p class="first"><%=h @article.description.html_safe%></p>
+            <div class="tag_row" style="margin-left: 11%;">
+              <a href="#" class="tag">business</a>
+              <a href="#" class="tag">technology</a>
+              <a href="#" class="tag">photography</a>
+              <a href="#" class="tag">electronics</a>
+              <a href="#" class="tag">entertainment</a>
+              <a href="#" class="tag">fashion</a>
+              <a href="#" class="tag">education</a>
+              <a href="#" class="tag">places</a>
+            </div>
+          </div>
+        </div>
+        </div>
+  <div class="row col-sm-12 related_post_row">
+    <div class="title_row row">
+      <h3 class="fleft">Recommended</h3>
+      <div class="fright" id="related_post_dots"></div>
+    </div>
+    <div class="related_posts row m0 center">
+      <div class="owl-carousel related_posts_carousel">
+        <%articles.each do |article|%>
+            <div class="item">
+          <div class="featured_img row m0"><%=image_tag article.image.url, class:'img-responsive' ,style:'min-height:300px'%></div>
+          <h3><%=link_to article.title ,article_path(article) %></h3>
+        </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </div>
+</section>
+
+
+
+

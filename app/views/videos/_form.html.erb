@@ -1,0 +1,39 @@
+<section class="row">
+  <div class="container-fluid">
+    <div class="row m0 elements_col">
+
+      <div class="contactForm row m0">
+        <%=form_for @video ,html: { class:'row', multipart: true } do |f|%>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <%=f.text_field :url, class:'form-control', placeholder:'Url'%>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Category" %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <%=f.file_field :thumb %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="input-group textarea">
+                <%=f.text_area :description, class:'form-control' %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="input-group">
+                <%=f.text_field :title, class:'form-control', placeholder:'Title'%>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <%=f.submit class:'btn btn-primary'%>
+            </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</section>

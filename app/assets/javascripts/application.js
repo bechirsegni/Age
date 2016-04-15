@@ -26,4 +26,10 @@
 //= require jquery.infinitescroll.min.js
 //= require theme.js
 //= require infinite1
+//= require editor.js
 //= require turbolinks
+//= require_self
+
+$(function() {
+    $('#new').froalaEditor()
+});

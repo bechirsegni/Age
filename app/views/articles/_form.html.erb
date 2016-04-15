@@ -1,9 +1,35 @@
-<%=form_for @article do |f|%>
-  <%= f.label :title%>
-    <%=f.text_field :title%>
-    <%=f.label :description%>
-    <%=f.text_area :description%>
-    <%=f.check_box :published , checked: false%>
+<section class="row">
+  <div class="container-fluid">
+<div class="row m0 elements_col">
 
-    <%=f.submit%>
-<%end%>
+<div class="contactForm row m0">
+  <%=form_for @article ,html: { class:'row', multipart: true } do |f|%>
+    <div class="col-sm-4">
+      <div class="input-group">
+        <%=f.text_field :title, class:'form-control', placeholder:'Title'%>
+      </div>
+    </div>
+      <div class="col-sm-4">
+        <div class="input-group">
+          <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Category" %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group">
+          <%=f.check_box :published%>
+          <%=f.file_field :image %>
+        </div>
+      </div>
+    <div class="col-sm-12">
+      <div class="input-group textarea">
+        <%=f.text_area :description, id:'new', class:'form-conrol' %>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <%=f.submit class:'btn btn-primary'%>
+    </div>
+  <%end%>
+</div>
+</div>
+  </div>
+</section>
