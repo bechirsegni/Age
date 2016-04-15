@@ -13,7 +13,7 @@
             <h3 class="post_title"><%=@video.title%></h3>
             <h5 class="bywho">by <%= @video.user.email%> on <%=@video.created_at.strftime("%A, %b %d")%></h5>
             <div class="post_content row m0 " >
-              <p class="first"><%=h @video.description.html_safe%></p>
+              <p class="first"><%=h @video.description%></p>
               <div class="tag_row" style="margin-left: 11%;">
                 <a href="#" class="tag">business</a>
                 <a href="#" class="tag">technology</a>

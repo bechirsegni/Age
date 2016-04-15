@@ -4,14 +4,26 @@
   <%= render 'articles_types/heading'%>
   <section class="row all_posts">
 
-    <%@articles.each do |article|%>
+    <%@articles.drop(4)[0,1].each do |article|%>
         <div class="post-<%=article.id%>">
-        <%= render "articles_types/#{article.article_type}",  article: article%>
+        <%= render "articles_types/interview",  article: article%>
           </div>
+    <%end%>
+    <%@articles.drop(4)[1,3].each do |article|%>
+        <div class="post-<%=article.id%>">
+          <%= render "articles_types/interview",  article: article%>
+        </div>
     <%end%>
   </section>
 
   <%= render 'articles_types/videos'%>
+  <section class="row all_posts">
+    <%@sports.each do |article|%>
+        <div class="post-<%=article.id%>">
+          <%= render "articles_types/rectangle",  article: article%>
+        </div>
+    <%end%>
+    </section>
   <section class="row alert_row">
     <div class="alert alert-dismissible fade in mobile_app_alert" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times"></i></button>

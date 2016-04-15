@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    @articles = Article.all.order(id: :desc).limit(8)
+    @articles = Article.all.order(id: :desc).limit(12)
+    @sports   = Article.where(Category.name == 'Sports').order(id: :desc).limit(4)
   end
 
   def about

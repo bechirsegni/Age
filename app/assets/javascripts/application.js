@@ -25,6 +25,5 @@
 //= require jquery.infinitescroll.min.js
 //= require theme.js
 //= require infinite1
-//= require turbolinks
 //= require ckeditor/init
 //= require_self

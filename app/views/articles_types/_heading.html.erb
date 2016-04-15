@@ -2,62 +2,58 @@
 <section class="row featured_posts">
   <div class="container-fluid">
     <div class="row" id="featured_posts">
-      <div class="col-sm-6 post">
-        <div class="row inner">
-          <img src="images/posts/features/1.jpg" alt="" class="featured-img">
-          <div class="row m0 content">
-            <h4 class="category politics"><a href="#">politics</a></h4>
-            <h2 class="title"><a href="single-blog.html">U.S. House Chamber Closed After Unknown Material</a></h2>
-            <ul class="post_meta nav nav-pills">
-              <li><a href="#">August 6, 2015</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-              <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
-            </ul>
+      <% feature_articles[0,1].each do |a| %>
+          <div class="col-sm-6 post">
+            <div class="row inner">
+              <%= image_tag a.image.url(:big_feauture) ,class:'featured-img'%>
+              <div class="row m0 content">
+                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
+                <ul class="post_meta nav nav-pills">
+                  <li><%=link_to a.created_at.strftime("%A, %b %d")%></li>
+                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
+                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-6 post">
-        <div class="row inner">
-          <img src="images/posts/features/2.jpg" alt="" class="featured-img">
-          <div class="row m0 content">
-            <h4 class="category sports"><a href="#">sports</a></h4>
-            <h2 class="title"><a href="single-blog.html">Philip Rivers: I’m going to be a Charger, wherever we are</a></h2>
-            <ul class="post_meta nav nav-pills">
-              <li><a href="#">August 6, 2015</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-              <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
-            </ul>
+      <%end%>
+      <%if feature_articles.size > 1%>
+      <% feature_articles[1,1].each do |a| %>
+          <div class="col-sm-6 post">
+            <div class="row inner">
+              <%= image_tag a.image.url(:med_home) ,class:'featured-img'%>
+              <div class="row m0 content">
+                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
+                <ul class="post_meta nav nav-pills">
+                  <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>
+                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
+                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-3 post">
-        <div class="row inner">
-          <img src="images/posts/features/3.jpg" alt="" class="featured-img">
-          <div class="row m0 content">
-            <h4 class="category money"><a href="#">money</a></h4>
-            <h2 class="title"><a href="single-blog.html">U.S. Flag Raised Over Embassy in Republic of Cuba</a></h2>
-            <ul class="post_meta nav nav-pills">
-              <li><a href="#">August 6, 2015</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-              <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
-            </ul>
+      <%end%>
+          <%end%>
+      <%if feature_articles.size > 2%>
+      <%feature_articles[2,2].each do |a|%>
+          <div class="col-sm-3 post">
+            <div class="row inner">
+              <%= image_tag a.image.url(:small_home) ,class:'featured-img'%>
+              <div class="row m0 content">
+                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
+                <ul class="post_meta nav nav-pills">
+                  <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>
+                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
+                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-3 post">
-        <div class="row inner">
-          <img src="images/posts/features/4.jpg" alt="" class="featured-img">
-          <div class="row m0 content">
-            <h4 class="category world"><a href="#">world</a></h4>
-            <h2 class="title"><a href="single-blog.html">Death Toll in Chinese Port Blasts Rises to 104</a></h2>
-            <ul class="post_meta nav nav-pills">
-              <li><a href="#">August 6, 2015</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-              <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <%end%>
+          <%end%>
     </div>
   </div>
 </section>

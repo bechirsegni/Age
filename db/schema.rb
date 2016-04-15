@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415131309) do
+ActiveRecord::Schema.define(version: 20160415182012) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20160415131309) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "article_type"
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -97,7 +100,10 @@ ActiveRecord::Schema.define(version: 20160415131309) do
     t.string   "thumb_content_type"
     t.integer  "thumb_file_size"
     t.datetime "thumb_updated_at"
+    t.string   "slug"
   end
+
+  add_index "videos", ["slug"], name: "index_videos_on_slug", unique: true, using: :btree
 
   add_foreign_key "taggings", "articles"
   add_foreign_key "taggings", "tags"

@@ -1,6 +1,15 @@
 class Article < ApplicationRecord
-  has_attached_file :image, styles: {large:"1016x469>", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: {large:"1016x469>",
+                                     big_feauture: "677x677#",
+                                     med_home: "677x338#",
+                                     small_home: "338x338#",
+                                     article: "882x395#" },
+                    default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 
   belongs_to :user
   belongs_to :category
