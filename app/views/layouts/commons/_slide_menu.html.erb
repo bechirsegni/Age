@@ -1,12 +1,12 @@
 <!--Sliding Menu Triggered with Menu-->
 <div class="sliding_menu row m0">
   <div class="row m0 search_row">
-    <form action="#" class="search_form fleft">
-      <div class="input-group">
+    <%= form_tag articles_path, role: 'search', class:'search_form fleft', method: :get do %>
+        <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-search"></i></span>
-        <input type="search" class="form-control">
-      </div>
-    </form>
+          <%= text_field_tag :query, params[:query],class:'form-control', type:'search', id:'query' %>
+        </div>
+    <%end%>
     <div class="fleft" id="menuHide">
       <%=image_tag 'logo/bars2.png'%></div>
   </div>

@@ -1,0 +1,18 @@
+<% provide(:title, "News ") %>
+
+<% if params[:category].present? %>
+    <% provide(:title, "#{category_name}") %>
+
+    <section class="row contact_cols">
+  <div class="col-sm-12 contact_col" style="margin-top: -30px;margin-bottom: -50px;">
+    <div class="heading row m0">
+      <h2 style="text-align: center; float:none ;"><%=category_name%></h2>
+    </div>
+    </div>
+  </section>
+<%end%>
+<section class="row all_posts" id="all_posts2">
+  <%@articles.each do |article|%>
+      <%= render 'articles/partials/article', article: article%>
+  <%end%>
+</section>

@@ -22,7 +22,6 @@
       </div>
 
       <div class="rightSide_nav pull-right">
-        <div class="fleft current_date"></div>
         <div class="fright search_dot">
           <ul class="nav navbar-nav">
             <li><a href="" data-toggle="modal" data-target="#search_form"><i class="fa fa-search"></i></a></li>
@@ -37,25 +36,16 @@
         </button>
         <div id="top_nav" class="collapse navbar-collapse fleft">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li>
-              <a href="#">All Pages</a>
-              <ul class="nav">
-                <li><a href="index2.html">Home 2</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="coming-soon.html">Coming Soon</a></li>
-                <li><a href="elements.html">Elements</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="font-awesome-cheatsheet.html">Font Awesome</a></li>
-                <li><a href="header-styles.html">Header Styles</a></li>
-                <li><a href="single-blog.html">Single Blog</a></li>
-                <li><a href="404.html">404</a></li>
-              </ul>
-            </li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="author-post.html">Author</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="newsletter-signup.html" class="subscribe_popup">Subscribe</a></li>
+            <li><%=link_to 'News', articles_path%></li>
+            <li><%=link_to 'Politics', articles_path(category: 'Politics')%></li>
+            <li><%=link_to 'Videos', videos_path %></li>
+            <li><%=link_to 'World', articles_path(category: 'World')%></li>
+            <li><%=link_to 'Sports', articles_path(category: 'Sports')%></li>
+            <li><%=link_to 'Culture', articles_path(category: 'Culture')%></li>
+            <li><%=link_to 'Technology', articles_path(category: 'Technology')%></li>
+            <li><%=link_to 'Photos', articles_path(category: 'Photos')%></li>
+            <li><%=link_to 'Art', articles_path(category: 'Art')%></li>
+            <li><%=link_to 'Music & Films', articles_path(category: 'Music & Films')%></li>
           </ul>
         </div>
       </div>

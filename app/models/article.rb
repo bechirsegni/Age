@@ -3,13 +3,27 @@ class Article < ApplicationRecord
                                      big_feauture: "677x677#",
                                      med_home: "677x338#",
                                      small_home: "338x338#",
-                                     article: "882x395#" },
+                                     article: "882x395#" ,
+                                      all_article: "318x522#"},
                     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  searchkick text_start: [:title], suggest: [:title] , searchable: [:title, :tag_list], autocomplete: ['title']
+  scope :search_import, -> { includes(:category) }
+
+  def search_data
+    {
+        title: title,
+        description: description,
+        tag_list: tag_list,
+        image: image,
+        category_id: category_id,
+        category: category,
+    }
+  end
 
   belongs_to :user
   belongs_to :category

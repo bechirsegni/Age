@@ -1,0 +1,75 @@
+<% provide(:title, 'Videos') %>
+
+<div class="gallery-page">
+<!--Gallery Header Here-->
+<section class="row gallery_header">
+  <div class="pull-left filter_4_gallery">
+    <div id="filters">
+      <div class="pull-left page_title">
+        Age Videos:
+      </div>
+      <ul class="nav nav-pills pull-left">
+        <li data-filter=".all">All</li>
+        <li data-filter=".Politics">Politics</li>
+        <li data-filter=".Culture">Culture</li>
+        <li data-filter=".Sports">Sports</li>
+        <li data-filter=".Documentary">Documentary</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dropdown pull-right social_share_drop">
+    <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-ellipsis-v"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+      <li><a href="#"><i class="fa fa-google-plus"></i> Google Plus</a></li>
+      <li><a href="#"><i class="fa fa-pinterest"></i> Pinterest</a></li>
+      <li><a href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+    </ul>
+  </div>
+</section>
+<!--Gallery Header Here-->
+<!--*****************************************************************************************************************-->
+
+<!--*****************************************************************************************************************-->
+<!--All Posts Here-->
+<section class="row gallery_posts" id="gallery_posts">
+  <%@videos.each do |video|%>
+  <div class="col-sm-3 post <%=video.category.name%>">
+    <div class="inner row m0">
+      <%= image_tag video.thumb.url(:medium), class:'featured_img'%>
+      <div class="row m0 post_content">
+        <div class="row m0 additional">
+          <a href="images/posts/gallery/2.jpg" class="zoom_gallery_img"><i class="fa fa-plus-square"></i></a>
+          <div class="dropdown social_share_drop">
+            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-ellipsis-v"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i> Google Plus</a></li>
+              <li><a href="#"><i class="fa fa-pinterest"></i> Pinterest</a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="texts row m0">
+          <h3 class="title"><%=video.title%></h3>
+          <p><%=video.description%></p>
+        </div>
+        <%= link_to video_path(video), class:'gallery_post_link' do %>
+        <i class="fa fa-play"></i><%end%>
+      </div>
+    </div>
+  </div>
+   <%end%>
+</section>
+<nav id="page_nav" class="row m0">
+  <a href="inc/page2.html"><i class="fa fa-refresh"></i></a>
+  <span>Load More</span>
+</nav>
+<!--All Posts Here-->
+</div>

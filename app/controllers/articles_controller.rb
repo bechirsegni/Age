@@ -4,8 +4,15 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    if params[:category].present?
+      @category_id = Category.find_by(name: params[:category]).id
+      @articles = Article.where(category: @category_id)
+     else
+      query = params[:query].presence || "*"
+      @articles = Article.search(query).results
+     end
   end
+
 
   def show
   end
@@ -56,4 +63,5 @@ class ArticlesController < ApplicationController
       false
     end
   end
+
 end

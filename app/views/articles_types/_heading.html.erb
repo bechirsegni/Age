@@ -2,12 +2,12 @@
 <section class="row featured_posts">
   <div class="container-fluid">
     <div class="row" id="featured_posts">
-      <% feature_articles[0,1].each do |a| %>
+      <% @articles[0,1].each do |a| %>
           <div class="col-sm-6 post">
             <div class="row inner">
               <%= image_tag a.image.url(:big_feauture) ,class:'featured-img'%>
               <div class="row m0 content">
-                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
                   <li><%=link_to a.created_at.strftime("%A, %b %d")%></li>
@@ -19,12 +19,12 @@
           </div>
       <%end%>
       <%if feature_articles.size > 1%>
-      <% feature_articles[1,1].each do |a| %>
+      <% @articles[1,1].each do |a| %>
           <div class="col-sm-6 post">
             <div class="row inner">
               <%= image_tag a.image.url(:med_home) ,class:'featured-img'%>
               <div class="row m0 content">
-                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
                   <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>
@@ -37,12 +37,12 @@
       <%end%>
           <%end%>
       <%if feature_articles.size > 2%>
-      <%feature_articles[2,2].each do |a|%>
+      <%@articles[2,2].each do |a|%>
           <div class="col-sm-3 post">
             <div class="row inner">
               <%= image_tag a.image.url(:small_home) ,class:'featured-img'%>
               <div class="row m0 content">
-                <h4 class="category politics"><a href="#"><%=a.category.name%></a></h4>
+                <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
                   <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>

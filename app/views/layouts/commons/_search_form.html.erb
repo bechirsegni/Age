@@ -8,14 +8,16 @@
         <a href="about.html"><i class="fa fa-info-circle"></i>get more info</a>
       </div>
       <div class="col-sm-8">
-        <form action="#" class="row m0">
+          <%= form_tag articles_path, role: 'search', class:'row m0', method: :get do %>
           <div class="input-group">
-            <input type="search" class="form-control" placeholder="Search">
-                        <span class="input-group-addon">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </span>
+            <%= text_field_tag :query, params[:query],class:'form-control',
+                                placeholder:'Search'%>
+
+              <span class="input-group-addon">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+              </span>
           </div>
-        </form>
+        <%end%>
       </div>
     </div>
   </div>

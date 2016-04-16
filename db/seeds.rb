@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 @categories = ["Culture", "Politics", "World", "Business & Finance",
-               "Technology" ,"Science & Health" ,"Pepole" "Videos" ,"Sports" ,
+               "Technology" ,"Science & Health" ,"Pepole" ,"Videos" ,"Sports" ,
                "Fashion" ,"Food" ,"Gaming" ,"Music & Films" ,"Art" ,"Photos"]
 
 @categories.each do |c|

@@ -15,7 +15,9 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'paperclip'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'friendly_id'
+gem 'searchkick'
 
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'

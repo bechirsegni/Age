@@ -123,29 +123,54 @@ button:hover {
   width: 5px;
   margin-right: 10px;
 }
-.category.politics > a:before {
+.category.Politics > a:before {
   background: #f31d12;
 }
 .category.politics > a:hover {
   color: #f31d12;
 }
-.category.sports > a:before {
+.category.Sports > a:before {
   background: #3152be;
 }
-.category.sports > a:hover {
+.category.Sports > a:hover {
   color: #3152be;
 }
-.category.money > a:before {
+.category.Videos > a:before {
   background: #4bae4f;
 }
-.category.money > a:hover {
+.category.Videos > a:hover {
   color: #4bae4f;
 }
-.category.world > a:before {
+.category.Culture > a:before {
   background: #fe5621;
 }
-.category.world > a:hover {
+.category.Culture > a:hover {
   color: #fe5621;
+}
+.category.World > a:before {
+    background: #056efe;
+}
+.category.World > a:hover {
+    color: #056efe;
+}
+.category.Business > a:before {
+    background: #b000fe;
+}
+.category.Business > a:hover {
+    color: #b000fe;
+}
+.category.Pepole > a:before {
+    background: #56f4fe;
+}
+.category.Pepole > a:hover {
+    color: #56f4fe;
+}
+
+.category.Art > a:before {
+    background: #fe3ea1;
+}
+.category.Art > a:hover {
+    color: #fe3ea1;
 }
 .social_share_drop {
   z-index: 2;

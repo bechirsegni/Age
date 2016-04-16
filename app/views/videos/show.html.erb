@@ -1,3 +1,5 @@
+<% provide(:title, "#{@video.title}") %>
+
 <section class="row">
   <div class="embed-responsive embed-responsive-4by3" style="padding-bottom: 35%;">
     <iframe class="embed-responsive-item" src="<%=@video.url%>"></iframe>
