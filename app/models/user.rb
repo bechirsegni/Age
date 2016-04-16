@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :articles
   has_many :videos
+  has_many :tops
 end
