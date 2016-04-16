@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'friendly_id'
 
+
 group :development, :test do
   gem 'byebug'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'

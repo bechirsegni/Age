@@ -27,3 +27,4 @@
 //= require infinite1
 //= require ckeditor/init
 //= require_self
+

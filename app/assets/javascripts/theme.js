@@ -186,7 +186,7 @@
         /*  PopUps - Newsletter Signup Popup / Search Form
         /*----------------------------------------------------*/
         $('a.subscribe_popup').magnificPopup({
-            type: 'ajax'
+            type: 'modal'
         });
         $('a#search_form').magnificPopup({
             type: 'ajax'
