@@ -1912,6 +1912,8 @@ button:hover {
 }
 .single-blog .post_inner {
   padding: 0 30px;
+    margin-right: 15%;
+    margin-left: 15%;
 }
 .single-blog .post_inner .category {
   color: #13141b;
@@ -1960,8 +1962,6 @@ button:hover {
 .single-blog .post_inner .post_content p {
     font-weight: 400;
     font-size: 1.3em;
-    margin-left: 11%;
-    margin-right: 11%;
 }
 .single-blog .post_inner .post_content p.first:first-letter {
   font-weight: bold;
@@ -6513,14 +6513,12 @@ h5,
 }
 
 .social {
-    margin-left: 15%;
     margin-top: 9px;
     margin-bottom: -20px;
 }
 
 @media (max-width: 480px) {
     .social {
-        margin-left: 5%;
         margin-top: 9px;
         margin-bottom: -20px;
     }
