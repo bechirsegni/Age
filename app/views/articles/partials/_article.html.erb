@@ -21,12 +21,11 @@
           </ul>
         </div>
       </div>
-      <h3 class="post_title"><%= link_to article.title , article_path(article)%></h3>
+      <h3 class="post_title" ><%= link_to article.title.first(45) , article_path(article) ,style:'font-size: 14px;'%></h3>
       <ul class="post_meta nav nav-pills">
-        <li><%=article.created_at.strftime("%A, %b %d")%></li>
-        <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-        <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+        <li><%=article.created_at.strftime("%A, %b %d")%> By <%= article.user.name%></li>
       </ul>
     </div>
   </div>
   </div>
+<%=render 'articles/partials/comment'%>

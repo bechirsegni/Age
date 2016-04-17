@@ -12,7 +12,11 @@
   </section>
 <%end%>
 <section  class="row all_posts" style="position: relative">
+  <%if @articles.count > 1 %>
   <%@articles.each do |article|%>
       <%= render 'articles/partials/article', article: article%>
   <%end%>
+      <%else%>
+       <%= render 'articles/partials/nothing'%>
+   <%end%>
 </section>

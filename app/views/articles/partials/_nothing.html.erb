@@ -1,0 +1,57 @@
+<section class="row content_404">
+  <div class="col-sm-6 banner_404">
+    <div class="inner row m0">
+      <%= form_tag articles_path, class:'row m0 search_form_404', method: :get do %>
+          <div class="input-group">
+            <%= text_field_tag :query, params[:query],class:'form-control',
+                               placeholder:'Search'%>
+
+            <span class="input-group-addon">
+                            <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+             </span>
+          </div>
+      <%end%>
+      <div class="notified_404 row m0">
+        <h2 style="font-size: 230px;">WAIT</h2>
+        <h3>You have finally reached the end of the internet!</h3>
+      </div>
+      <div class="row m0 search_by_cat">
+        <h3 class="pull-left m0">Search by category:</h3>
+        <h4 class="category pull-left World">
+          <%=link_to 'WORLD', articles_path(category: 'World')%>
+        </h4>
+        <h4 class="category pull-left Sports">
+          <%=link_to 'SPORTS', articles_path(category: 'Sports')%>
+        </h4>
+        <h4 class="category pull-left Politics">
+          <%=link_to 'POLITICS', articles_path(category: 'Politics')%>
+        </h4>
+        <h4 class="category pull-left Art">
+          <%=link_to 'ART', articles_path(category: 'Art')%>
+        </h4>
+      </div>
+    </div>
+  </div> <!--404-->
+  <div class="col-sm-6 featured_posts">
+    <div class="row">
+      <%feature_articles.limit(4).each do |article|%>
+          <div class="col-sm-6 post">
+            <div class="row inner">
+              <%= link_to article_path(article) do %>
+                  <%= image_tag article.image.url(:small_home) ,class:'featured-img'%>
+              <%end%>
+              <div class="row m0 content">
+                <h4 class="category <%=article.category.name%>">
+                  <a href="#" style="color:white;"><%=article.category.name%></a>
+                </h4>
+                <h2 class="title"><%= link_to article.title , article_path(article)%></h2>
+                <ul class="post_meta nav nav-pills">
+                  <li><a href=""><%=article.created_at.strftime("%A, %b %d")%> By <%= article.user.name%></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    <%end%>
+    </div>
+  </div> <!--Suggest News-->
+</section>
