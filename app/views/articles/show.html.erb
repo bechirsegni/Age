@@ -1,3 +1,5 @@
+
+
 <% provide(:title, "#{@article.title}") %>
 
 <section class="row col-sm-8">
@@ -6,42 +8,33 @@
 <section class="row">
   <div class="container-fluid">
     <div class="row">
-
-<div class="col-sm-8 single-blog sticky content_col">
+      <div class="col-sm-8 single-blog sticky content_col">
       <div class="row m0 inner">
         <div class="post_inner row m0">
-          <h3 class="post_title"><%=@article.title%></h3>
-          <h5 class="bywho">by <%= @article.user.email%> on <%=@article.created_at.strftime("%A, %b %d")%></h5>
+          <div class="social">
+            <%=link_to root_path do %>
+                <div class="twitter-share">
+                  <p><i class="fa fa-twitter" style="margin-right: 3px;"></i>Twitter</p>
+                </div>
+            <%end%>
+            <div class="facebook-share">
+              <p><i class="fa fa-facebook" style="margin-right: 3px;"></i>Facebook</p>
+            </div>
+          </div>
+          <h3 class="post_title" style="color:#4c4e4d"><%=@article.title%></h3>
+          <h5 class="bywho">
+            By <i> <%= @article.user.name%></i> on <%=@article.created_at.strftime("%A, %b %d")%>
+            <i class="fa fa-twitter"><a href="http://www.twitter.com/<%=@article.user.twitter%>" target="_blank"><%=@article.user.twitter%></a></i>
+          </h5>
           <div class="post_content row m0 " >
             <p class="first"><%=h @article.description.html_safe%></p>
             <div class="tag_row" style="margin-left: 11%;">
-              <%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t), class:'tag' }.join(', ') %>
+               <%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t) , class:'tag'}.join(' ') %>
             </div>
           </div>
         </div>
         </div>
-  <div class="row col-sm-12 related_post_row">
-    <div class="title_row row">
-      <h3 class="fleft">Recommended</h3>
-      <div class="fright" id="related_post_dots"></div>
-    </div>
-    <div class="related_posts row m0 center">
-      <div class="owl-carousel related_posts_carousel">
-        <%articles.each do |article|%>
-            <div class="item">
-          <div class="featured_img row m0"><%=image_tag article.image.url, class:'img-responsive' ,style:'min-height:300px'%></div>
-          <h3><%=link_to article.title ,article_path(article) %></h3>
-        </div>
-        <%end%>
       </div>
     </div>
   </div>
-
-</div>
-    </div>
-  </div>
 </section>
-
-
-
-

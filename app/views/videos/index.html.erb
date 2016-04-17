@@ -42,7 +42,8 @@
       <%= image_tag video.thumb.url(:medium), class:'featured_img'%>
       <div class="row m0 post_content">
         <div class="row m0 additional">
-          <a href="images/posts/gallery/2.jpg" class="zoom_gallery_img"><i class="fa fa-plus-square"></i></a>
+          <%=link_to video_path(video), class:'zoom_gallery_img' do %>
+              <i class="fa fa-play" style="color:#F31D12; font-size: 30px"></i><%end%>
           <div class="dropdown social_share_drop">
             <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-ellipsis-v"></i>

@@ -1,10 +1,12 @@
-<div class="col-sm-3 post " style="position: relative">
-  <div class="row m0 inner" >
+<div class="col-sm-3 post">
+  <div class="row m0 inner">
     <div class="row m0 featured_img">
-      <%=image_tag article.image.url(:all_article)%>
+      <%= link_to article_path(article) do %>
+          <%= image_tag article.image.url(:all_article) ,class:'img-responsive'%>
+      <%end%>
     </div>
     <div class="row m0 post_contents">
-      <div class="row m0 category <%=article.category.name%> ">
+      <div class="row m0 category <%=article.category.name%>">
         <a href="#"><%=article.category.name%></a>
         <div class="dropdown pull-right social_share_drop">
           <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,12 +21,12 @@
           </ul>
         </div>
       </div>
-      <h3 class="post_title"><%=link_to article.title , article_path(article)%></h3>
+      <h3 class="post_title"><%= link_to article.title , article_path(article)%></h3>
       <ul class="post_meta nav nav-pills">
-        <li><a href="#"><%= link_to article.created_at.strftime("%A, %b %d")%></a></li>
+        <li><%=article.created_at.strftime("%A, %b %d")%></li>
         <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
         <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
       </ul>
     </div>
   </div>
-</div><!--Post-->
+  </div>

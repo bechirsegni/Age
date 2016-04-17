@@ -18,11 +18,11 @@ gem 'friendly_id'
 gem 'searchkick'
 
 gem 'newrelic_rpm'
+gem 'modernizr-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
-  gem 'bullet', '~> 5.0'
 end
 
 group :development do
