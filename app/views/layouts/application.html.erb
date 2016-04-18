@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= full_title(yield(:title))%></title>
     <meta property="fb:app_id" content="1048380041867191" />
+    <%= render 'layouts/commons/favicon'%>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
@@ -25,5 +29,6 @@
 
   <%= javascript_include_tag 'application'%>
   <%= yield :js %>
+  <%= render 'layouts/commons/analytics'%>
   </body>
 </html>

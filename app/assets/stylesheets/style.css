@@ -6563,3 +6563,21 @@ a {
     color :#4F7177;
     font-weight: 700;
 }
+
+.img-show {
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+@media (max-width:835px) {
+    .img-show {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .single-blog .post_inner .post_title {
+        font-size: 32px;
+    }
+    .tag_row{
+        padding: 0;
+    }
+}
