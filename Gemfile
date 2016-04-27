@@ -20,6 +20,11 @@ gem 'searchkick'
 gem 'newrelic_rpm'
 gem 'modernizr-rails'
 
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: 'capistrano/rvm'
+
 group :development, :test do
   gem 'byebug'
   gem 'better_errors', '~> 2.1', '>= 2.1.1'

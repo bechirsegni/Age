@@ -4,7 +4,7 @@
     <%= form_tag articles_path, role: 'search', class:'search_form fleft', method: :get do %>
         <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-search"></i></span>
-          <%= text_field_tag :query, params[:query],class:'form-control', type:'search', id:'query' %>
+          <%= text_field_tag :q, params[:query],class:'form-control', type:'search', id:'query' %>
         </div>
     <%end%>
     <div class="fleft" id="menuHide">
@@ -13,56 +13,22 @@
   <div class="row m0 navByCat">
     <ul class="nav">
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">news</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">politics</a></li>
-          <li><a href="#">sports</a></li>
-          <li><a href="#">money</a></li>
-          <li><a href="#">world</a></li>
-        </ul>
+        <%=link_to 'News', articles_path%>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">politics</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Australia</a></li>
-          <li><a href="#">Canada</a></li>
-          <li><a href="#">France</a></li>
-          <li><a href="#">Germany</a></li>
-          <li><a href="#">Poland</a></li>
-          <li><a href="#">Ukraine</a></li>
-        </ul>
+        <%=link_to 'Videos', videos_path %>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">sports</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">NFL</a></li>
-          <li><a href="#">MLB</a></li>
-          <li><a href="#">NBA</a></li>
-          <li><a href="#">NHL</a></li>
-          <li><a href="#">NCAAF</a></li>
-          <li><a href="#">NCAAB</a></li>
-        </ul>
+        <%=link_to 'Music & Films', articles_path(category: 'Music & Films')%>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">money</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Markets</a></li>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Personal Finance</a></li>
-          <li><a href="#">Cars</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
+        <%=link_to 'Politics', articles_path(category: 'Politics')%>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">world</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Business Travel</a></li>
-          <li><a href="#">Experience Travel</a></li>
-          <li><a href="#">Destinations</a></li>
-          <li><a href="#">Flights</a></li>
-          <li><a href="#">Cruises</a></li>
-          <li><a href="#">Deals</a></li>
-        </ul>
+      <%=link_to 'World', articles_path(category: 'World')%>
+      </li>
+      <li class="dropdown">
+        <%=link_to 'Technology', articles_path(category: 'Technology')%>
       </li>
     </ul>
   </div>

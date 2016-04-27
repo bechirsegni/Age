@@ -36,12 +36,38 @@
             <%= raw @article.tags.map(&:name).map { |t| link_to t, tag_path(t) , class:'tag'}.join(' ') %>
             </div>
             <div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="3" data-mobile="true" data-colorscheme="light"></div>
+
           </div>
         </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-sm-12 featured_posts">
+    <div class="row">
+      <%feature_articles.limit(4).each do |article|%>
+          <div class="col-sm-3 post">
+            <div class="row inner">
+              <%= link_to article_path(article) do %>
+                  <%= image_tag article.image.url(:small_home) ,class:'featured-img'%>
+              <%end%>
+              <div class="row m0 content">
+                <h4 class="category <%=article.category.name%>">
+                  <a href="#" style="color:white;"><%=article.category.name%></a>
+                </h4>
+                <h2 class="title"><%= link_to article.title , article_path(article)%></h2>
+                <ul class="post_meta nav nav-pills">
+                  <li><a href=""><%=article.created_at.strftime("%A, %b %d")%> By <%= article.user.name%></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      <%end%>
+    </div>
+  </div> <!--Suggest News-->
+
 </section>
 <%=render 'articles/partials/comment'%>
+
+
 

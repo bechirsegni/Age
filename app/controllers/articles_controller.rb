@@ -2,12 +2,13 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :beautify_search_url, only: [:index]
 
   def index
     if params[:category].present?
       @category_id = Category.find_by(name: params[:category]).id
       @articles = Article.where(category: @category_id)
-     else
+    else
       query = params[:query].presence || "*"
       @articles = Article.search(query).results
      end
@@ -62,6 +63,10 @@ class ArticlesController < ApplicationController
       #you must return false to halt
       false
     end
+  end
+
+  def beautify_search_url
+    redirect_to search_articles_path(query: params[:q]) if params[:q].present?
   end
 
 end

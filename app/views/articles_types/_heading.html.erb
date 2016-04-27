@@ -10,9 +10,7 @@
                 <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
-                  <li><%=link_to a.created_at.strftime("%A, %b %d")%></li>
-                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                  <li style="color:white"><%=link_to a.created_at.strftime("%A, %b %d")%> By <%=a.user.name%></li>
                 </ul>
               </div>
             </div>
@@ -27,9 +25,7 @@
                 <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
-                  <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>
-                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                  <li style="color:white"><%= link_to a.created_at.strftime("%A, %b %d")%> By <%=a.user.name%></li>
                 </ul>
               </div>
             </div>
@@ -45,9 +41,7 @@
                 <h4 class="category <%=a.category.name%> "><a href="#"><%=a.category.name%></a></h4>
                 <h2 class="title"><%=link_to a.title, article_path(a)%></h2>
                 <ul class="post_meta nav nav-pills">
-                  <li><%= link_to a.created_at.strftime("%A, %b %d")%></li>
-                  <li><a href="#"><i class="fa fa-thumbs-o-up"></i>1456</a></li>
-                  <li><a href="#"><i class="fa fa-commenting"></i>32</a></li>
+                  <li style="color:white"><%= link_to a.created_at.strftime("%A, %b %d")%>  By <%= a.user.name%></li>
                 </ul>
               </div>
             </div>

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'terms' , to: 'static_pages#terms'
   get 'tags/:tag', to: 'articles#index', as: :tag
 
-  resources :articles
+  resources :articles do
+    get 'search/*query', to: 'articles#index', as: :search, on: :collection
+  end
   resources :videos
   resources :tops
 end

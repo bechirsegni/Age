@@ -11,7 +11,7 @@
     </div>
   </section>
 <%end%>
-<section  class="row all_posts" style="position: relative">
+<section  class="row all_posts">
   <%if @articles.count > 1 %>
   <%@articles.each do |article|%>
       <%= render 'articles/partials/article', article: article%>
